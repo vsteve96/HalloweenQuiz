@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/halloween-main_opt2.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.blood {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
