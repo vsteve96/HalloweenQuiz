@@ -5,12 +5,52 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
+    font-family: 'Joti One', serif;
 }
 
 .blood {
     position: fixed;
     top: 0;
     left: 50%;
+    /* Center align, without the risk of exceeding the viewport */
+    transform: translateX(-50%);
+    /* Place on top of the background image */
+    z-index: 2;
+}
+
+.quiz-container {
+    position: relative;
+    /* Ensure that background image remains behind the quiz-container */
+    z-index: 1;
+}
+
+.game-area {
+    width: 1000px;
+    height: 600px;
+    border-radius: 20px;
+    background-color: #000000;
+    position: fixed;
+    top: 55%;
+    left: 40%;
+    /* Ensure  that the game area remains in the middle */
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.button {
+    width: 150px;
+    height: 75px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    background-color: #000000;
 }
