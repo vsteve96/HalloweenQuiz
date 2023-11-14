@@ -18,31 +18,37 @@ body {
     z-index: 2;
 }
 
-.quiz-container {
-    position: relative;
-    /* Ensure that background image remains behind the quiz-container */
-    z-index: 1;
-}
-
 .game-area {
-    width: 1000px;
-    height: 600px;
+    width: 80%;
+    max-width: 1000px;
+    height: 500px;
     border-radius: 20px;
     background-color: #000000;
     position: fixed;
     top: 55%;
     left: 40%;
-    /* Ensure  that the game area remains in the middle */
     transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 20px;
+}
+
+#page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    position: relative;
     z-index: 2;
 }
 
-.button {
-    width: 150px;
+#btn {
+    font-family: 'Joti One', serif;
+    width: 100%;
+    max-width: 480px;
     height: 75px;
     font-size: 1.5rem;
     border-radius: 10px;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,4 +59,34 @@ body {
     transform: translateX(-50%);
     z-index: 2;
     background-color: #000000;
+}
+
+.question {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.answers {
+    font-size: 1.5rem;
+    display: flex;
+    /* Allow answers to wrap to the next line if needed */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
 }
