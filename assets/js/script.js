@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display answer choices
         currentQuestion.answers.forEach(function (answer) {
             let answerButton = document.createElement("button");
+
+            answerButton.classList.add('answer-button');
             answerButton.textContent = answer;
             answerButton.addEventListener('click', function () {
                 handleAnswerSelection(answer);
@@ -67,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Handle correct answer logic (e.g., update score)
 
             console.log("Correct!");
+            addScore();
         } else {
             // Handle incorrect answer logic
             console.log("Incorrect!");
@@ -82,6 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // No more questions, display the final score or completion message
             displayFinalScore();
         }
+    }
+
+    function addScore() {
+
     }
 
     function displayFinalScore() {
