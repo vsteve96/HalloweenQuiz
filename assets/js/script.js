@@ -5,21 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let answersElement = document.querySelector(".answers");
   let button = document.getElementById("btn");
 
-  let questions = [
-    {
-      question: "What's another name for a lycanthrope?",
-      answers: ["Vampire", "Werewolf", "Dragon", "Mermaid"],
-      correctAnswer: "Werewolf",
-    },
-    {
-      question: "What is 2 + 2?",
-      answers: ["3", "4", "5", "6"],
-      correctAnswer: "4",
-    },
-    // Add more questions here
-  ];
-
   let currentQuestionIndex = 0;
+  let score = 0;
 
   if (currentQuestionIndex === 0) {
     button.textContent = "Start Quiz";
@@ -63,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleAnswerSelection(selectedAnswer) {
     let currentQuestion = questions[currentQuestionIndex];
-
     // Check if the selected answer is correct
     if (selectedAnswer === currentQuestion.correctAnswer) {
       // Handle correct answer logic (e.g., update score)
@@ -86,12 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
       displayFinalScore();
     }
   }
-
-  function addScore() {}
+  
+  function addScore() {
+    let scoreDiv = document.getElementById("score");
+    
+    // Increment the score by 1
+    score++;
+    scoreDiv.innerHTML = `Score: ${score}`;
+  }
 
   function displayFinalScore() {
-    // Display the final score or completion message
-    scoreArea.textContent =
-      "Quiz completed! Display the final score or completion message here.";
+    console.log("Quiz is finished.");
   }
 });
