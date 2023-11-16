@@ -1,98 +1,97 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let gameArea = document.querySelector(".game-area");
-    let scoreArea = document.querySelector(".score-area");
-    let questionElement = document.querySelector(".question");
-    let answersElement = document.querySelector(".answers");
-    let button = document.getElementById("btn");
+  let gameArea = document.querySelector(".game-area");
+  let scoreArea = document.querySelector(".score-area");
+  let questionElement = document.querySelector(".question");
+  let answersElement = document.querySelector(".answers");
+  let button = document.getElementById("btn");
 
-    let questions = [
-        {
-            question: "What's another name for a lycanthrope?",
-            answers: ["Vampire", "Werewolf", "Dragon", "Mermaid"],
-            correctAnswer: "Werewolf",
-        },
-        {
-            question: "What is 2 + 2?",
-            answers: ["3", "4", "5", "6"],
-            correctAnswer: "4",
-        }
-        // Add more questions here
-    ];
+  let questions = [
+    {
+      question: "What's another name for a lycanthrope?",
+      answers: ["Vampire", "Werewolf", "Dragon", "Mermaid"],
+      correctAnswer: "Werewolf",
+    },
+    {
+      question: "What is 2 + 2?",
+      answers: ["3", "4", "5", "6"],
+      correctAnswer: "4",
+    },
+    // Add more questions here
+  ];
 
-    let currentQuestionIndex = 0;
+  let currentQuestionIndex = 0;
 
-    if (currentQuestionIndex === 0) {
-        button.textContent = "Start Quiz";
+  if (currentQuestionIndex === 0) {
+    button.textContent = "Start Quiz";
+  }
+
+  button.addEventListener("click", function () {
+    // Show game area
+    gameArea.style.display = "block";
+    scoreArea.style.display = "block";
+
+    // Set button text based on the current question index
+
+    if (currentQuestionIndex < questions.length - 1) {
+      button.textContent = "Next Question";
+    } else {
+      button.textContent = "Finish";
     }
 
-    button.addEventListener('click', function () {
-        // Show game area
-        gameArea.style.display = "block";
-        scoreArea.style.display = "block";
+    // Display current question
+    displayQuestion();
+  });
 
-        // Set button text based on the current question index
+  function displayQuestion() {
+    let currentQuestion = questions[currentQuestionIndex];
 
-        if (currentQuestionIndex < questions.length - 1) {
-            button.textContent = "Next Question";
-        } else {
-            button.textContent = "Finish";
-        }
+    questionElement.textContent = currentQuestion.question;
+    answersElement.innerHTML = "";
 
-        // Display current question
-        displayQuestion();
+    // Display answer choices
+    currentQuestion.answers.forEach(function (answer) {
+      let answerButton = document.createElement("button");
+
+      answerButton.classList.add("answer-button");
+      answerButton.textContent = answer;
+      answerButton.addEventListener("click", function () {
+        handleAnswerSelection(answer);
+      });
+      answersElement.appendChild(answerButton);
     });
+  }
 
-    function displayQuestion() {
-        let currentQuestion = questions[currentQuestionIndex];
+  function handleAnswerSelection(selectedAnswer) {
+    let currentQuestion = questions[currentQuestionIndex];
 
-        questionElement.textContent = currentQuestion.question;
-        answersElement.innerHTML = "";
+    // Check if the selected answer is correct
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+      // Handle correct answer logic (e.g., update score)
 
-        // Display answer choices
-        currentQuestion.answers.forEach(function (answer) {
-            let answerButton = document.createElement("button");
-
-            answerButton.classList.add('answer-button');
-            answerButton.textContent = answer;
-            answerButton.addEventListener('click', function () {
-                handleAnswerSelection(answer);
-            });
-            answersElement.appendChild(answerButton);
-        });
+      console.log("Correct!");
+      addScore();
+    } else {
+      // Handle incorrect answer logic
+      console.log("Incorrect!");
     }
 
-    function handleAnswerSelection(selectedAnswer) {
-        let currentQuestion = questions[currentQuestionIndex];
+    // Move to the next question
+    currentQuestionIndex++;
 
-        // Check if the selected answer is correct
-        if (selectedAnswer === currentQuestion.correctAnswer) {
-            // Handle correct answer logic (e.g., update score)
-
-            console.log("Correct!");
-            addScore();
-        } else {
-            // Handle incorrect answer logic
-            console.log("Incorrect!");
-        }
-
-        // Move to the next question
-        currentQuestionIndex++;
-
-        // Check if there are more questions
-        if (currentQuestionIndex < questions.length) {
-            displayQuestion();
-        } else {
-            // No more questions, display the final score or completion message
-            displayFinalScore();
-        }
+    // Check if there are more questions
+    if (currentQuestionIndex < questions.length) {
+      displayQuestion();
+    } else {
+      // No more questions, display the final score or completion message
+      displayFinalScore();
     }
+  }
 
-    function addScore() {
+  function addScore() {}
 
-    }
-
-    function displayFinalScore() {
-        // Display the final score or completion message
-        scoreArea.textContent = "Quiz completed! Display the final score or completion message here.";
-    }
+  function displayFinalScore() {
+    // Display the final score or completion message
+    scoreArea.textContent =
+      "Quiz completed! Display the final score or completion message here.";
+  }
 });

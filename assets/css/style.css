@@ -1,110 +1,113 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../images/halloween-main_opt2.webp');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    font-family: 'Joti One', serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/halloween-main_opt2.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-family: "Joti One", serif;
+  position: relative;
 }
 
 .blood {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    /* Center align, without the risk of exceeding the viewport */
-    transform: translateX(-50%);
-    /* Place on top of the background image */
-    z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  /* Center align, without the risk of exceeding the viewport */
+  transform: translateX(-50%);
+  /* Place on top of the background image */
+  z-index: 2;
 }
 
 .quiz-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.game-area {
-    width: 80%;
-    max-width: 1000px;
-    height: 500px;
-    border-radius: 20px;
-    background-color: #000000;
-    padding: 20px;
-    margin: 260px 100px;
-    z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
 }
 
 #page-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: white;
-    position: relative;
-    z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  position: relative;
+  z-index: 2;
 }
 
 /* Main button styling */
 #btn {
-    font-family: 'Joti One', serif;
-    width: 100%;
-    max-width: 480px;
-    height: 75px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    background-color: #000000;
+  font-family: "Joti One", serif;
+  width: 100%;
+  max-width: 480px;
+  height: 75px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: #000000;
 }
 
 /* Questions styling */
 .question {
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    top: 18%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.game-area {
+  width: 80%;
+  max-width: 1000px;
+  height: 500px;
+  border-radius: 20px;
+  background-color: #000000;
+  padding: 20px;
+  margin: 260px 100px;
 }
 
 /* Answers styling */
 .answers {
-    display: flex;
-    justify-content: space-evenly;
-    height: 400px;
-    flex-wrap: wrap;
-    margin-top: 18px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 400px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  position: relative;
+  z-index: 3;
 }
 
 .answer-button {
-    margin: 40px;
-    padding: 20px;
-    font-family: 'Joti One';
-    font-size: 1.5rem;
-    border-radius: 10px;
+  margin: 40px;
+  padding: 20px;
+  font-family: "Joti One";
+  font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 .score-area {
-    height: 200px;
-    width: 300px;
-    border-radius: 20px;
-    background-color: #000000;
-    padding: 20px;
-    margin: 50px;
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
+  height: 200px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: #000000;
+  padding: 20px;
+  margin: 50px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
 }
