@@ -48,7 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  position: relative;
+  position: absolute;
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
@@ -116,4 +116,41 @@ body {
   color: white;
   text-align: center;
   font-size: 1.5rem;
+}
+
+.difficulty-select {
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+label {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+#difficulty {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.quiz-container {
+  margin-top: 20px;
+}
+
+.game-area {
+  display: none; /* Hide the game area by default */
+}
+
+.score-area {
+  display: none; /* Hide the score area by default */
+}
+
+.btn-div {
+  margin-top: 20px;
 }

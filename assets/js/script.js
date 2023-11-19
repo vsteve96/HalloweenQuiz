@@ -4,39 +4,71 @@ document.addEventListener("DOMContentLoaded", function () {
   let questionElement = document.querySelector(".question");
   let answersElement = document.querySelector(".answers");
   let button = document.getElementById("btn");
+  let difficultySelect = document.getElementById("difficulty");
+  let scoreDiv = document.getElementById("score");
+
+  let questions = {
+    easy: [
+      {
+        question: "What is the capital of France?",
+        answers: ["Berlin", "Madrid", "Paris", "Rome"],
+        correctAnswer: "Paris",
+      },
+      // Add more easy questions
+    ],
+    medium: [
+      {
+        question: "Which planet is known as the Red Planet?",
+        answers: ["Mars", "Venus", "Jupiter", "Saturn"],
+        correctAnswer: "Mars",
+      },
+      // Add more medium questions
+    ],
+    hard: [
+      {
+        question: "In which year did the French Revolution begin?",
+        answers: ["1789", "1799", "1809", "1819"],
+        correctAnswer: "1789",
+      },
+      // Add more hard questions
+    ],
+  };
 
   let currentQuestionIndex = 0;
   let score = 0;
+  let currentQuestions = [];
 
-  if (currentQuestionIndex === 0) {
+  initialize();
+
+  function initialize() {
     button.textContent = "Start Quiz";
+    button.addEventListener("click", startQuiz);
   }
 
-  button.addEventListener("click", function () {
-    // Show game area
+  function startQuiz() {
     gameArea.style.display = "block";
     scoreArea.style.display = "block";
-
-    // Set button text based on the current question index
-
-    if (currentQuestionIndex < questions.length - 1) {
-      button.textContent = "Next Question";
-    } else {
-      button.textContent = "Finish";
-    }
-
-    // Display current question
     displayQuestion();
-  });
+  }
 
   function displayQuestion() {
-    let currentQuestion = questions[currentQuestionIndex];
+    let selectedDifficulty = difficultySelect.value;
+    currentQuestions = questions[selectedDifficulty];
 
-    questionElement.textContent = currentQuestion.question;
+    if (currentQuestionIndex < currentQuestions.length) {
+      let currentQuestion = currentQuestions[currentQuestionIndex];
+
+      questionElement.textContent = currentQuestion.question;
+      displayAnswers(currentQuestion.answers);
+    } else {
+      displayFinalScore();
+    }
+  }
+
+  function displayAnswers(answerList) {
     answersElement.innerHTML = "";
 
-    // Display answer choices
-    currentQuestion.answers.forEach(function (answer) {
+    answerList.forEach(function (answer) {
       let answerButton = document.createElement("button");
 
       answerButton.classList.add("answer-button");
@@ -46,42 +78,39 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       answersElement.appendChild(answerButton);
     });
+
+    setButtonText();
   }
 
   function handleAnswerSelection(selectedAnswer) {
-    let currentQuestion = questions[currentQuestionIndex];
-    // Check if the selected answer is correct
-    if (selectedAnswer === currentQuestion.correctAnswer) {
-      // Handle correct answer logic (e.g., update score)
+    let currentQuestion = currentQuestions[currentQuestionIndex];
 
+    if (selectedAnswer === currentQuestion.correctAnswer) {
       console.log("Correct!");
-      addScore();
+      score++;
+      updateScore();
     } else {
-      // Handle incorrect answer logic
       console.log("Incorrect!");
     }
 
-    // Move to the next question
     currentQuestionIndex++;
+    displayQuestion();
+  }
 
-    // Check if there are more questions
-    if (currentQuestionIndex < questions.length) {
-      displayQuestion();
+  function setButtonText() {
+    if (currentQuestionIndex < currentQuestions.length - 1) {
+      button.textContent = "Next Question";
     } else {
-      // No more questions, display the final score or completion message
-      displayFinalScore();
+      button.textContent = "Finish";
     }
   }
-  
-  function addScore() {
-    let scoreDiv = document.getElementById("score");
-    
-    // Increment the score by 1
-    score++;
+
+  function updateScore() {
     scoreDiv.innerHTML = `Score: ${score}`;
   }
 
   function displayFinalScore() {
     console.log("Quiz is finished.");
   }
+  
 });
