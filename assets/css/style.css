@@ -101,11 +101,6 @@ body {
   border-radius: 10px;
 }
 
-.score {
-  position: relative;
-  color: white;
-}
-
 .score-area {
   height: 200px;
   width: 300px;
@@ -116,12 +111,14 @@ body {
   color: white;
   text-align: center;
   font-size: 1.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 .difficulty-select {
   margin-top: 20px;
   position: absolute;
-  bottom: 20px; /* Adjust as needed */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

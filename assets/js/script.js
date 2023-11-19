@@ -7,32 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let difficultySelect = document.getElementById("difficulty");
   let scoreDiv = document.getElementById("score");
 
-  let questions = {
-    easy: [
-      {
-        question: "What is the capital of France?",
-        answers: ["Berlin", "Madrid", "Paris", "Rome"],
-        correctAnswer: "Paris",
-      },
-      // Add more easy questions
-    ],
-    medium: [
-      {
-        question: "Which planet is known as the Red Planet?",
-        answers: ["Mars", "Venus", "Jupiter", "Saturn"],
-        correctAnswer: "Mars",
-      },
-      // Add more medium questions
-    ],
-    hard: [
-      {
-        question: "In which year did the French Revolution begin?",
-        answers: ["1789", "1799", "1809", "1819"],
-        correctAnswer: "1789",
-      },
-      // Add more hard questions
-    ],
-  };
+  
 
   let currentQuestionIndex = 0;
   let score = 0;
@@ -83,19 +58,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handleAnswerSelection(selectedAnswer) {
-    let currentQuestion = currentQuestions[currentQuestionIndex];
 
-    if (selectedAnswer === currentQuestion.correctAnswer) {
-      console.log("Correct!");
-      score++;
-      updateScore();
-    } else {
-      console.log("Incorrect!");
-    }
+  /* First get all the correct answers and then compare them with the selected answer if it's correct or not */
+  const allCorrectAnswers = [];
+  Object.values(questions).forEach(difficultyArray => {
+    difficultyArray.forEach(question => {
+      allCorrectAnswers.push(question.correctAnswer);
+    });
+  });
 
-    currentQuestionIndex++;
-    displayQuestion();
+  if (allCorrectAnswers.includes(selectedAnswer)) {
+    console.log("Correct!");
+    score++;
+    updateScore();
+  } else {
+    console.log("Incorrect!");
+    score--;
+    updateScore();
   }
+
+  currentQuestionIndex++;
+  displayQuestion();
+}
 
   function setButtonText() {
     if (currentQuestionIndex < currentQuestions.length - 1) {
@@ -106,11 +90,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateScore() {
-    scoreDiv.innerHTML = `Score: ${score}`;
+    scoreDiv.innerHTML = `Score: 
+    ${score}`;
   }
 
   function displayFinalScore() {
     console.log("Quiz is finished.");
   }
-  
 });
