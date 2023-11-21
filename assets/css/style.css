@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   background: url(../images/halloween-main_opt2.webp) no-repeat center center fixed;
   background-position: center center;
   background-size: cover;
@@ -25,18 +27,18 @@ body {
 }
 
 .welcome-container {
-  font-size: 1.5rem;
-  width: 60vw;
-  height: 50vh;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 40px;
-  margin: 200px auto;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    font-size: 1.5rem;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 40px;
+    margin: 100px 30px 0;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .welcome-container p {
@@ -72,6 +74,12 @@ body {
 }
 
 /* Main button styling */
+.btn-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 #btn {
   font-family: "Joti One", serif;
   width: 100%;
@@ -83,11 +91,6 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
   background-color: #000000;
 }
 
@@ -139,17 +142,19 @@ body {
 
 .score-area {
   display: none;
-  height: 200px;
-  width: 300px;
-  border-radius: 20px;
+  height: 6vh;
+  width: 10vw;
+  border-radius: 15px;
   background-color: #000000;
   padding: 20px;
-  margin: 50px;
+  margin: 0 20px;
   color: white;
   text-align: center;
   font-size: 1.5rem;
-  position: relative;
-  z-index: 3;
+}
+
+#score {
+  margin: 10px;
 }
 
 /* These two are required for the handleAnswerSelection javascript function */

@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let difficultySelect = document.getElementById("difficulty");
   let scoreDiv = document.getElementById("score");
   let welcomeMessage = document.querySelector(".welcome-container");
-  
+  let sndCorrect = new Audio("../assets/sounds/correct.wav");
+  let sndFail = new Audio("../assets/sounds/fail.wav");
+
   let currentQuestionIndex = 0;
   let score = 0;
   let currentQuestions = [];
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayAnswers(answerList) {
     answersElement.innerHTML = "";
-
+      /* Add answer buttons */
     answerList.forEach(function (answer) {
       let answerButton = document.createElement("button");
 
@@ -53,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         handleAnswerSelection(answer);
       });
       answersElement.appendChild(answerButton);
-    });
-
+    }); 
+    
     setButtonText();
   }
 
@@ -69,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Use setTimeout to delay the color change
     setTimeout(() => {
       if (allCorrectAnswers.includes(selectedAnswer)) {
         console.log("Correct!");
@@ -77,12 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
         highlightAnswerButton(selectedAnswer, "green");
         score++;
         updateScore();
+        sndCorrect.play();
       } else {
         console.log("Incorrect!");
         // Change the color of the selected answer button to red
         highlightAnswerButton(selectedAnswer, "red");
-        score--;
-        updateScore();
+        sndFail.play();
       }
 
         setTimeout(() => {
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestionIndex++;
         displayQuestion();
     }, 2000); // Delay on displaying the next question
-  }, 2000); // Delay on showing the answer result
+  }, 1000); // Delay on showing the answer result
 }
 
   function disableAnswerButtons() {
@@ -118,7 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateScore() {
-    scoreDiv.innerHTML = `Score: ${score}`;
+    scoreDiv.innerHTML = `Score: 
+    ${score}`;
   }
 
   function displayFinalScore() {
