@@ -7,16 +7,38 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="../assets/css/style.css" />
     <!--Google Fonts Import-->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Joti+One&family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&family=Play&family=Roboto&display=swap");
-    </style>
+    <style>@import url("https://fonts.googleapis.com/css2?family=Joti+One&family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&family=Play&family=Roboto&display=swap");</style>
+    <!--FontAwesome import-->
+    <script src="https://kit.fontawesome.com/915e9d9384.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="parent">
+    <div class="header">
+      <div id="page-title">Halloween Quiz</div>
       <img class="blood" src="../assets/images/blood_drip_opt1.png" />
-      <div id="page-title">Halloween Quiz Game</div>
     </div>
-    <div class="difficulty-select">
+    <div class="welcome-container">
+    <p><i class="fa-solid fa-ghost"></i>  Welcome to the Halloween Quiz Game! <i class="fa-solid fa-ghost"></i></p>
+    <p>Prepare for a Halloween-themed adventure filled with spooky questions.</p>
+    <p>To play:</p>
+    <ol>
+      <li>Click "Start Quiz" to begin the Halloween quiz.</li>
+      <li>Choose your difficulty level: Easy, Medium, or Hard.</li>
+      <li>Select the correct answer from the options provided.</li>
+      <li>Watch your score creep up with each correct answer and beware of the ghoulish consequences for incorrect ones.</li>
+      <li>Click "Next Question" to continue or "Finish" when you've conquered the quiz.</li>
+    </ol>
+    <p>May the spirits of Halloween guide you to victory! Good luck and enjoy the frightful fun! 🕸️👻</p>
+    <p>Happy haunting!</p>
+    </div>
+    <div class="finish-container">
+    <p>a</p>
+    </div>
+    <div class="quiz-container">
+      <div class="game-area">
+        <div class="question"></div>
+        <div class="answers"></div>
+      </div>
+      <div class="difficulty-select">
       <label for="difficulty">Select Difficulty:</label>
       <select id="difficulty">
         <option value="easy">Easy</option>
@@ -24,16 +46,10 @@
         <option value="hard">Hard</option>
       </select>
     </div>
-    <div class="quiz-container">
-      <div class="game-area">
-        <div class="question"></div>
-        <div class="answers"></div>
-      </div>
       <div class="score-area">
         <div id="score"></div>
       </div>
     </div>
-
     <div class="btn-div">
       <button id="btn" type="button"></button>
     </div>

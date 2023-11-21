@@ -1,22 +1,63 @@
 body {
   margin: 0;
-  padding: 0;
-  background-image: url("../images/halloween-main_opt2.webp");
+  background: url(../images/halloween-main_opt2.webp) no-repeat center center fixed;
+  background-position: center center;
   background-size: cover;
-  background-position: center;
   height: 100vh;
   font-family: "Joti One", serif;
-  position: relative;
 }
 
 .blood {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  /* Center align, without the risk of exceeding the viewport */
-  transform: translateX(-50%);
-  /* Place on top of the background image */
+  position: absolute;
   z-index: 2;
+  top: 0;
+  display: flex;
+  width: 100%;
+}
+
+#page-title {
+  font-size: 3vw;
+  color: white;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.welcome-container {
+  font-size: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  background-color: #000000;
+  padding: 40px;
+  margin: 200px auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-container p {
+  position: relative;
+  z-index: 3;
+}
+
+.finish-container {
+  font-size: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  background-color: #000000;
+  padding: 40px;
+  margin: 200px auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .quiz-container {
@@ -26,22 +67,12 @@ body {
   position: relative;
 }
 
-#page-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: white;
-  position: relative;
-  z-index: 2;
-}
-
 /* Main button styling */
 #btn {
   font-family: "Joti One", serif;
   width: 100%;
   max-width: 480px;
-  height: 75px;
+  height: 10vh;
   font-size: 1.5rem;
   border-radius: 10px;
   display: flex;
@@ -66,13 +97,14 @@ body {
   color: white;
   position: relative;
   padding: 10px;
-  top: 18%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
 }
 
 .game-area {
+  display: none;
   width: 80%;
   max-width: 1000px;
   height: 500px;
@@ -88,7 +120,7 @@ body {
   justify-content: space-evenly;
   height: 400px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  margin: 2vw;
   position: relative;
   z-index: 3;
 }
@@ -102,6 +134,7 @@ body {
 }
 
 .score-area {
+  display: none;
   height: 200px;
   width: 300px;
   border-radius: 20px;
@@ -118,7 +151,7 @@ body {
 .difficulty-select {
   margin-top: 20px;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -137,17 +170,5 @@ label {
 }
 
 .quiz-container {
-  margin-top: 20px;
-}
-
-.game-area {
-  display: none; /* Hide the game area by default */
-}
-
-.score-area {
-  display: none; /* Hide the score area by default */
-}
-
-.btn-div {
   margin-top: 20px;
 }

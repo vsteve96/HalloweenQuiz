@@ -4,15 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
   let questionElement = document.querySelector(".question");
   let answersElement = document.querySelector(".answers");
   let button = document.getElementById("btn");
+  let difficultyDiv = document.querySelector(".difficulty-select")
   let difficultySelect = document.getElementById("difficulty");
   let scoreDiv = document.getElementById("score");
-
+  let welcomeMessage = document.querySelector(".welcome-container");
+  let finishContainer = document.querySelector(".finish-container");
   
-
   let currentQuestionIndex = 0;
   let score = 0;
   let currentQuestions = [];
-
+  finishContainer.style.display = "none";
   initialize();
 
   function initialize() {
@@ -23,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function startQuiz() {
     gameArea.style.display = "block";
     scoreArea.style.display = "block";
+    welcomeMessage.style.display = "none";
+    difficultyDiv.style.display = "none";
     displayQuestion();
   }
 
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleAnswerSelection(selectedAnswer) {
 
-  /* First get all the correct answers and then compare them with the selected answer if it's correct or not */
+  /* The logic here is to first get all the correct answers and then compare them with the selected answer if it's correct or not */
   const allCorrectAnswers = [];
   Object.values(questions).forEach(difficultyArray => {
     difficultyArray.forEach(question => {
@@ -77,10 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
     updateScore();
   }
 
+  /* Show the next question */
   currentQuestionIndex++;
   displayQuestion();
 }
 
+/* Change the button text content depending on the current relevance */
   function setButtonText() {
     if (currentQuestionIndex < currentQuestions.length - 1) {
       button.textContent = "Next Question";
@@ -96,5 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayFinalScore() {
     console.log("Quiz is finished.");
+    finishContainer.display.style = "block";
   }
 });
