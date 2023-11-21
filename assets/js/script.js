@@ -8,12 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let difficultySelect = document.getElementById("difficulty");
   let scoreDiv = document.getElementById("score");
   let welcomeMessage = document.querySelector(".welcome-container");
-  let finishContainer = document.querySelector(".finish-container");
   
   let currentQuestionIndex = 0;
   let score = 0;
   let currentQuestions = [];
-  finishContainer.style.display = "none";
   initialize();
 
   function initialize() {
@@ -101,6 +99,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayFinalScore() {
     console.log("Quiz is finished.");
-    finishContainer.display.style = "block";
   }
 });
