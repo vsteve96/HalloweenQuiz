@@ -3,20 +3,21 @@ body {
   background: url(../images/halloween-main_opt2.webp) no-repeat center center fixed;
   background-position: center center;
   background-size: cover;
-  height: 100vh;
   font-family: "Joti One", serif;
+  overflow: hidden;
 }
 
 .blood {
-  position: absolute;
   z-index: 2;
   top: 0;
   display: flex;
-  width: 100%;
+  height: 67vh;
+  width: 100vw;
+  position: fixed;
 }
 
 #page-title {
-  font-size: 3vw;
+  font-size: 3rem;
   color: white;
   position: relative;
   z-index: 3;
@@ -25,14 +26,13 @@ body {
 
 .welcome-container {
   font-size: 1.5rem;
-  width: 100%;
-  max-width: 1000px;
-  height: 600px;
+  width: 60vw;
+  height: 50vh;
   border-radius: 20px;
-  background-color: #000000;
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 40px;
   margin: 200px auto;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,6 +42,10 @@ body {
 .welcome-container p {
   position: relative;
   z-index: 3;
+}
+
+.welcome-container li {
+  list-style-type: "🎃";
 }
 
 .finish-container {
@@ -105,9 +109,9 @@ body {
 
 .game-area {
   display: none;
-  width: 80%;
+  width: 60vw;
   max-width: 1000px;
-  height: 500px;
+  height: 50vh;
   border-radius: 20px;
   background-color: #000000;
   padding: 20px;
@@ -148,15 +152,17 @@ body {
   z-index: 3;
 }
 
+/* These two are required for the handleAnswerSelection javascript function */
+.answer-correct {
+  background-color: green;
+}
+
+.answer-incorrect {
+  background-color: red;
+}
+
 .difficulty-select {
-  margin-top: 20px;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  z-index: 2;
+  
 }
 
 label {

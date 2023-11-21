@@ -59,31 +59,56 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handleAnswerSelection(selectedAnswer) {
+    // Disable click events on answer buttons temporarily
+    disableAnswerButtons();
 
-  /* The logic here is to first get all the correct answers and then compare them with the selected answer if it's correct or not */
-  const allCorrectAnswers = [];
-  Object.values(questions).forEach(difficultyArray => {
-    difficultyArray.forEach(question => {
-      allCorrectAnswers.push(question.correctAnswer);
+    const allCorrectAnswers = [];
+    Object.values(questions).forEach(difficultyArray => {
+      difficultyArray.forEach(question => {
+        allCorrectAnswers.push(question.correctAnswer);
+      });
     });
-  });
 
-  if (allCorrectAnswers.includes(selectedAnswer)) {
-    console.log("Correct!");
-    score++;
-    updateScore();
-  } else {
-    console.log("Incorrect!");
-    score--;
-    updateScore();
-  }
+    // Use setTimeout to delay the color change
+    setTimeout(() => {
+      if (allCorrectAnswers.includes(selectedAnswer)) {
+        console.log("Correct!");
+        // Change the color of the selected answer button to green
+        highlightAnswerButton(selectedAnswer, "green");
+        score++;
+        updateScore();
+      } else {
+        console.log("Incorrect!");
+        // Change the color of the selected answer button to red
+        highlightAnswerButton(selectedAnswer, "red");
+        score--;
+        updateScore();
+      }
 
-  /* Show the next question */
-  currentQuestionIndex++;
-  displayQuestion();
+        setTimeout(() => {
+        // Show the next question
+        currentQuestionIndex++;
+        displayQuestion();
+    }, 2000); // Delay on displaying the next question
+  }, 2000); // Delay on showing the answer result
 }
 
-/* Change the button text content depending on the current relevance */
+  function disableAnswerButtons() {
+  const answerButtons = document.querySelectorAll(".answer-button");
+  answerButtons.forEach(button => {
+    button.disabled = true;
+  });
+}
+
+  function highlightAnswerButton(selectedAnswer, color) {
+    const answerButtons = document.querySelectorAll(".answer-button");
+    answerButtons.forEach(button => {
+      if (button.textContent === selectedAnswer) {
+        button.style.backgroundColor = color;
+      }
+    });
+  }
+
   function setButtonText() {
     if (currentQuestionIndex < currentQuestions.length - 1) {
       button.textContent = "Next Question";
@@ -93,8 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateScore() {
-    scoreDiv.innerHTML = `Score: 
-    ${score}`;
+    scoreDiv.innerHTML = `Score: ${score}`;
   }
 
   function displayFinalScore() {
