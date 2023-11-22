@@ -1,17 +1,25 @@
 # Halloween Quiz Game
 
-Welcome to my Halloween Quiz game!
+Welcome to the Halloween Quiz game!
 In this game, you'll be put to the test to see how well you know Halloween and every spooky thing that comes with it. Get ready to challenge your knowledge of all things spooky and Halloween-related!
 
 ![alt text](image.jpg)
 
-# User Experience
+## Table of Contents
 
-In this browser-based Quiz Game the contesters will have a chance to test their knowledge about Halloween-related topics. The overall design was crafted with a focus on simplicity, ensuring that visitors 
-need not overly concentrate on navigation but instead immerse themselves in the game. 
+- [Description](#description)
+- [Features](#features)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
 
 **User Stories**
 
+## Features
 
-Questions from:
-https://www.today.com/life/holidays/halloween-trivia-rcna37519
+- Choose between 3 difficulty levels: Easy, Medium, or Hard.
+- Click "Start Quiz" to begin the Halloween quiz.
+- Select the correct answer from the options provided.
+- The next question will appear within 2 seconds, but you can skip with the button anytime.
+- Beware! Spooky sounds are present in the game! You can mute this with the mute button below.

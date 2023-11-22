@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       questionElement.textContent = currentQuestion.question;
       displayAnswers(currentQuestion.answers);
-    } else {
-      displayFinalScore();
+    } else if (currentQuestionIndex === currentQuestions.length - 5) {
+    displayFinalScore(); // Call displayFinalScore only once when the condition is first met
     }
   }
 
@@ -72,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       answersElement.appendChild(answerButton);
     }); 
-    
-    setButtonText();
   }
 
   function handleAnswerSelection(selectedAnswer) {
@@ -102,11 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
         sndFail.play();
       }
 
-        setTimeout(() => {
         // Show the next question
         currentQuestionIndex++;
-        displayQuestion();
-    }, 2000); // Delay on displaying the next question
+        setButtonText();
   }, 1000); // Delay on showing the answer result
 }
 
@@ -127,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setButtonText() {
-    if (currentQuestionIndex < currentQuestions.length - 1) {
+    if (currentQuestionIndex < currentQuestions.length - 5) {
       button.textContent = "Next Question";
     } else {
       button.textContent = "Finish";
@@ -140,6 +136,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayFinalScore() {
-    console.log("Quiz is finished.");
-  }
+  gameArea.style.display = "none";
+  scoreArea.style.display = "none";
+  difficultyDiv.style.display = "none";
+  button.style.display = "none";
+  const muteBtn = document.getElementById("muteBtn");
+  muteBtn.style.display = "none";
+
+  // Create the finishing message container
+  let finishContainer = document.createElement("div");
+  finishContainer.classList.add("finish-container");
+
+  // Display the final score in the finishing message
+  let finalScoreMessage = document.createElement("p");
+  finalScoreMessage.textContent = `Congratulations! Your final score is: ${score}`;
+  finishContainer.appendChild(finalScoreMessage);
+
+  // Create the "Play Again" button
+  let playAgainButton = document.createElement("button");
+  playAgainButton.textContent = "Play Again";
+  playAgainButton.classList.add("play-again-button");
+  playAgainButton.addEventListener("click", function () {
+    // Reset variables and elements for a new game
+    currentQuestionIndex = 0;
+    score = 0;
+    gameArea.style.display = "block";
+    scoreArea.style.display = "block";
+    difficultyDiv.style.display = "block";
+    finishContainer.remove();
+    displayQuestion(); // Start the new game
+  });
+  finishContainer.appendChild(playAgainButton);
+
+  // Append the finishing message container to the body
+  document.body.appendChild(finishContainer);
+}
 });
