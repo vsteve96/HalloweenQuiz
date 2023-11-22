@@ -59,6 +59,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 
 .quiz-container {
@@ -118,7 +119,6 @@ body {
   display: none;
   width: 60vw;
   max-width: 1000px;
-  height: 50vh;
   border-radius: 20px;
   background-color: rgba(0,0,0, 0.8);
   padding: 20px;
@@ -154,18 +154,13 @@ body {
 
 .score-area {
   display: none;
-  height: 6vh;
-  width: 10vw;
   border-radius: 15px;
   background-color: #000000;
+  margin: 10px;
   padding: 20px;
   color: white;
   text-align: center;
   font-size: 1.5rem;
-}
-
-#score {
-  margin: 10px;
 }
 
 /* These two are required for the handleAnswerSelection javascript function */
@@ -200,8 +195,12 @@ label {
     font-size: 1.5rem;
   }
 
+  .score-area {
+    font-size: 1.2rem;
+  }
+
   .answer-button {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0;
     margin: 0;
   }

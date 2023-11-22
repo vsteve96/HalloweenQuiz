@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       questionElement.textContent = currentQuestion.question;
       displayAnswers(currentQuestion.answers);
+
+      setButtonText();
     } else if (currentQuestionIndex === currentQuestions.length - 5) {
     displayFinalScore(); // Call displayFinalScore only once when the condition is first met
     }
@@ -135,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ${score}`;
   }
 
-  function displayFinalScore() {
+ function displayFinalScore() {
   gameArea.style.display = "none";
   scoreArea.style.display = "none";
   difficultyDiv.style.display = "none";
@@ -156,19 +158,36 @@ document.addEventListener("DOMContentLoaded", function () {
   let playAgainButton = document.createElement("button");
   playAgainButton.textContent = "Play Again";
   playAgainButton.classList.add("play-again-button");
-  playAgainButton.addEventListener("click", function () {
-    // Reset variables and elements for a new game
-    currentQuestionIndex = 0;
-    score = 0;
-    gameArea.style.display = "block";
-    scoreArea.style.display = "block";
-    difficultyDiv.style.display = "block";
-    finishContainer.remove();
-    displayQuestion(); // Start the new game
-  });
   finishContainer.appendChild(playAgainButton);
 
-  // Append the finishing message container to the body
   document.body.appendChild(finishContainer);
+
+  // Return the finishContainer so that it can be accessed outside this function
+  return finishContainer;
 }
+
+  // Function to handle the "Play Again" logic
+  function playAgain() {
+  // Reset variables and elements for a new game
+  currentQuestionIndex = 0;
+  score = 0;
+
+  gameArea.style.display = "block";
+  scoreArea.style.display = "block";
+  button.style.display = "block";
+    
+
+  // Get the finish container and remove it
+  const finishContainer = document.querySelector(".finish-container");
+  finishContainer.remove();
+
+  // Start the new game by displaying the first question
+  displayQuestion();
+}
+  
+  document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("play-again-button")) {
+    playAgain();
+  }
+})
 });
