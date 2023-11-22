@@ -98,7 +98,9 @@ let questions = {
         correctAnswer: "Spellman"
       },
       {
-        question: "",
+        question: "What is the best selling Horror movie?",
+        answers: ["The Ring", "Saw", "Scream", "IT"],
+        correctAnswer: "IT"
       }
     ],
 

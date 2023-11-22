@@ -10,11 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
   let welcomeMessage = document.querySelector(".welcome-container");
   let sndCorrect = new Audio("../assets/sounds/correct.wav");
   let sndFail = new Audio("../assets/sounds/fail.wav");
+  
 
+  let isMuted = false;
   let currentQuestionIndex = 0;
   let score = 0;
   let currentQuestions = [];
   initialize();
+  
+  /* Ensure function is available globally */
+  window.toggleMute = function() { 
+  isMuted = !isMuted;
+
+  // Set audio elements to mute
+  sndCorrect.muted = isMuted;
+  sndFail.muted = isMuted;
+
+  // Change the button color based on the mute state
+  const muteBtn = document.getElementById("muteBtn");
+  muteBtn.style.backgroundColor = isMuted ? "red" : "#000000";
+  }
 
   function initialize() {
     button.textContent = "Start Quiz";
@@ -33,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedDifficulty = difficultySelect.value;
     currentQuestions = questions[selectedDifficulty];
 
-    if (currentQuestionIndex < currentQuestions.length) {
+    /* Display 5 questions */
+    if (currentQuestionIndex < currentQuestions.length -5) {
       let currentQuestion = currentQuestions[currentQuestionIndex];
 
       questionElement.textContent = currentQuestion.question;
