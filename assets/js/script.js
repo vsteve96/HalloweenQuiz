@@ -184,6 +184,8 @@ document.addEventListener("DOMContentLoaded", function () {
   gameArea.style.display = "block";
   scoreArea.style.display = "block";
   button.style.display = "block";
+  const muteBtn = document.getElementById("muteBtn");
+  muteBtn.style.display = "block";
     
 
   // Get the finish container and remove it
