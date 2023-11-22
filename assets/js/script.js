@@ -41,7 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
     scoreArea.style.display = "block";
     welcomeMessage.style.display = "none";
     difficultyDiv.style.display = "none";
+    shuffleQuestions();
     displayQuestion();
+  }
+
+  function shuffleQuestions() {
+    let selectedDifficulty = difficultySelect.value;
+    currentQuestions = questions[selectedDifficulty];
+
+    // Sort the questions array with a random comparator
+    currentQuestions.sort(() => Math.random() - 0.5);
   }
 
   function displayQuestion() {
@@ -151,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Display the final score in the finishing message
   let finalScoreMessage = document.createElement("p");
-  finalScoreMessage.textContent = `Congratulations! Your final score is: ${score}`;
+  finalScoreMessage.textContent = `Congratz! Your final score is: ${score}`;
   finishContainer.appendChild(finalScoreMessage);
 
   // Create the "Play Again" button

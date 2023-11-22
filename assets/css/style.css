@@ -180,6 +180,8 @@ label {
 #difficulty {
   padding: 8px;
   font-size: 16px;
+  z-index: 3;
+  position: relative;
 }
 
 .quiz-container {
