@@ -112,7 +112,7 @@ The current implementation allows the user to click the "Next Question" button d
 The site was deployed to GitHub pages.
 
 In the GitHub repository, navigated to the Settings tab
-From the source section drop-down menu, selected the Master Branch
+From the source section drop-down menu, selected the Main Branch
 Once the master branch has been selected, the page has been automatically refreshed with a detailed display indicating the successful deployment.
 
 ## Credits
