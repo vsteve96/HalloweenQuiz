@@ -146,6 +146,11 @@ let questions = {
         correctAnswer: "Boo"
       },
       {
+        question: "In what U.S state is it illegal to dress up as a nun or a priest on Halloween?",
+        answers: ["Wisconsin", "Alabama", "Florida", "Illinois"],
+        correctAnswer: "Alabama"
+      },
+      {
         question: "What is the name of Billy's very cute and beleaguered mogwai in Gremlins?",
         answers: ["Bogart", "Gizmo", "Stripe", "Earl"],
         correctAnswer: "Gizmo"

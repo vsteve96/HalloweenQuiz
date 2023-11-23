@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Change the button color based on the mute state
   const muteBtn = document.getElementById("muteBtn");
   muteBtn.style.backgroundColor = isMuted ? "red" : "#000000";
+  console.log("The page is muted:", isMuted);
   }
 
   function initialize() {
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayQuestion() {
     let selectedDifficulty = difficultySelect.value;
     currentQuestions = questions[selectedDifficulty];
-
+    
     /* Display 5 questions */
     if (currentQuestionIndex < currentQuestions.length -5) {
       let currentQuestion = currentQuestions[currentQuestionIndex];
@@ -124,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }
 
+/* Set a button color based on whether the answer is correct. */
   function highlightAnswerButton(selectedAnswer, color) {
     const answerButtons = document.querySelectorAll(".answer-button");
     answerButtons.forEach(button => {
