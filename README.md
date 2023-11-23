@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [Description](#description)
+- [Wireframing](#wireframe)
 - [How to play](#how-to-play)
 - [Full Testing Report](#full-testing-report)
 - [Deployment](#deployment)
@@ -18,6 +19,12 @@ Welcome to the Halloween Quiz game!
 In this game, you'll be put to the test to see how well you know Halloween and every spooky thing that comes with it. Get ready to challenge your knowledge of all things spooky and Halloween-related! 
 The game's navigation is facilitated through the button, and the scoring is automatically handled. 
 Upon completing the game, there is an opportunity to initiate a new game.
+
+## Wireframe
+
+In designing the Halloween Quiz game, I created a wireframe on Figma that outlines the game's structure and user interface on the most common desktop and mobile screen sizes. The process included conceptualization, defining navigation, arranging quiz elements, establishing a scoring system, and ensuring a cohesive visual theme that fits the Halloween theme. The Figma wireframe served as a comprehensive guide for subsequent development, prioritizing the user experience.
+
+[Wireframing in figma](https://www.figma.com/file/9K9epByZRMGr1qFHrfMCLN/Halloween-Quiz-Game-Design?type=design&node-id=0%3A1&mode=design&t=QSxyzD7PVkcc5yB1-1)
 
 ## How to play
 
