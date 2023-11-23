@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let difficultySelect = document.getElementById("difficulty");
   let scoreDiv = document.getElementById("score");
   let welcomeMessage = document.querySelector(".welcome-container");
-  let sndCorrect = new Audio("../assets/sounds/correct.wav");
-  let sndFail = new Audio("../assets/sounds/fail.wav");
+  let sndCorrect = new Audio("assets/sounds/correct.wav");
+  let sndFail = new Audio("assets/sounds/fail.wav");
   
 
   let isMuted = false;
