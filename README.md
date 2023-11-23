@@ -1,21 +1,25 @@
 # Halloween Quiz Game
 
-Welcome to the Halloween Quiz game!
-In this game, you'll be put to the test to see how well you know Halloween and every spooky thing that comes with it. Get ready to challenge your knowledge of all things spooky and Halloween-related!
-
-![alt text](image.jpg)
+![](media/testing/amiresponsive.png)
 
 ## Table of Contents
 
 - [Description](#description)
-- [Features](#features)
-- [Usage](#usage)
+- [How to play](#how-to-play)
+- [Full Testing Report](#full-testing-report)
+- [Deployment](#deployment)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
+- [Credits](#credits)
 
 
+## Description
 
-## Features
+Welcome to the Halloween Quiz game!
+In this game, you'll be put to the test to see how well you know Halloween and every spooky thing that comes with it. Get ready to challenge your knowledge of all things spooky and Halloween-related! 
+The game's navigation is facilitated through the button, and the scoring is automatically handled. 
+Upon completing the game, there is an opportunity to initiate a new game.
+
+## How to play
 
 - Choose between 3 difficulty levels: Easy, Medium, or Hard.
 - Click "Start Quiz" to begin the Halloween quiz.
@@ -26,14 +30,18 @@ In this game, you'll be put to the test to see how well you know Halloween and e
 # Full Testing Report
 
 ## Automated Testing
- [W3C Validator](#w3c-validator)
-  - index.html - 
-  - style.css
+[W3C Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.\
+[jshint](https://jshint.com/) was used to validate the javascript files.
+  - index.html - [W3C HTML Validator](media/testing/w3html.png)
+  - style.css - [W3C CSS Validator](media/testing/w3css.png)
+  - script.js - [JavaScript Validator](media/testing/jshint.png)
+    - No errors were found when passing through the official Jshint validator.
+    - The following metrics were returned:
+      - There are 23 functions in this file.
+      - Function with the largest signature take 2 arguments, while the median is 0.
+      - Largest function has 30 statements in it, while the median is 2.
+      - The most complex function has a cyclomatic complexity value of 3 while the median is 1.
 
-
-## [JavaScript Validator](#javascript-validator)
-#### [jshint](https://jshint.com/) was used to validate the javascript.
-  - 
 ## [Lighthouse](#lighthouse)
 I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
 
@@ -114,6 +122,11 @@ The site was deployed to GitHub pages.
 In the GitHub repository, navigated to the Settings tab
 From the source section drop-down menu, selected the Main Branch
 Once the master branch has been selected, the page has been automatically refreshed with a detailed display indicating the successful deployment.
+
+## Screenshots
+
+ - [Correct answer feedback](media/screenshots/correctanswer.png)
+ - [Wrong answer feedback](media/screenshots/wronganswer.png)
 
 ## Credits
 

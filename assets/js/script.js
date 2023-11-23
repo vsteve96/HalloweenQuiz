@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let questionElement = document.querySelector(".question");
   let answersElement = document.querySelector(".answers");
   let button = document.getElementById("btn");
-  let difficultyDiv = document.querySelector(".difficulty-select")
+  let difficultyDiv = document.querySelector(".difficulty-select");
   let difficultySelect = document.getElementById("difficulty");
   let scoreDiv = document.getElementById("score");
   let welcomeMessage = document.querySelector(".welcome-container");
