@@ -10,7 +10,7 @@
 - [Deployment](#deployment)
 - [Screenshots](#screenshots)
 - [Credits](#credits)
-
+- [Potential Updates](#potential-updates)
 
 ## Description
 
@@ -42,13 +42,6 @@ Upon completing the game, there is an opportunity to initiate a new game.
       - Largest function has 30 statements in it, while the median is 2.
       - The most complex function has a cyclomatic complexity value of 3 while the median is 1.
 
-## [Lighthouse](#lighthouse)
-I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
-
-### Desktop Results
-
-### Mobile Results
-
 ## Manual Testing
 **User Stories**
 
@@ -57,7 +50,8 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 | I want to take part in a quiz online and improve my knowledge on the Halloween topic. I want to be able to play at any time, anywhere. | The Halloween Quiz pulls general knowledge quiz questions from an array of questions related to Halloween. The site is available for use whenever is convenient to the user. |
 | I want the site to be responsive to my device. | I have developed the site with responsiveness in mind. The site have been optimized and tested on all screen sizes, down to the size of Galaxy Fold (in Google Chrome Developer Tools). |
 | I want the site to be easy to navigate. | Buttons are used at convenient locations on the page, much like a mobile app. As the site is like a mobile app - I decided that I didn't want to add a navigation bar or footer, as these would make the site look more like a traditional webpage. The title does not act as a return to home screen button, the generated button is the only navigational button on the page, to avoid any ambiguity with the navigation.|
-
+| I want to know my performance after completing the quiz. | After completing the quiz, the user's final score is displayed on the screen. Additionally, a "Play Again" button is provided for users who want to try the quiz again. |
+| I want to mute/unmute sound effects during the quiz so I can play without disturbing others. | A mute button is available to toggle sound effects on and off. Clicking the mute button changes its color, providing a visual indicator of the sound state. |
 
 ## [Full Testing](#full-testing)
 ### Devices Tested
