@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedDifficulty = difficultySelect.value;
     currentQuestions = questions[selectedDifficulty];
     
+
     /* Display 5 questions */
     if (currentQuestionIndex < currentQuestions.length -5) {
       let currentQuestion = currentQuestions[currentQuestionIndex];

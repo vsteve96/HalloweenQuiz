@@ -18,7 +18,7 @@ body {
 
 
 #page-title {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   color: white;
   position: fixed;
   width: 100vw;
@@ -103,6 +103,7 @@ body {
   align-items: center;
   color: white;
   background-color: #000000;
+  pointer-events: auto;
 }
 
 /* Questions styling */
